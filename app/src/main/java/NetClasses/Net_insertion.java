@@ -34,10 +34,11 @@ public class Net_insertion {
 
             Log.i("BLANK ANNONCE INSERTION","je recupere bien le parametre "+names[2]);
             String data =
-                    URLEncoder.encode("title", "UTF-8")+    "=" +URLEncoder.encode(names[0],"UTF-8")+"&"+
-                    URLEncoder.encode("detail", "UTF-8")+   "=" +URLEncoder.encode(names[1],"UTF-8")+"&"+
-                    URLEncoder.encode("prix", "UTF-8")+     "=" +URLEncoder.encode(names[2],"UTF-8")+"&"+
-                    URLEncoder.encode("categorie","UTF-8")+ "=" +URLEncoder.encode(names[3],"UTF-8");
+                    URLEncoder.encode("id_notice", "UTF-8")+    "=" +URLEncoder.encode(names[0],"UTF-8")+"&"+
+                    URLEncoder.encode("title", "UTF-8")+    "=" +URLEncoder.encode(names[1],"UTF-8")+"&"+
+                    URLEncoder.encode("detail", "UTF-8")+   "=" +URLEncoder.encode(names[2],"UTF-8")+"&"+
+                    URLEncoder.encode("prix", "UTF-8")+     "=" +URLEncoder.encode(names[3],"UTF-8")+"&"+
+                    URLEncoder.encode("categorie","UTF-8")+ "=" +URLEncoder.encode(names[4],"UTF-8");
             writer.write(data);
             Log.i("BLANK ANNONCE INSERTION","j\'ecris sur le serveur");
             writer.flush();
@@ -49,11 +50,11 @@ public class Net_insertion {
             Net_gettingData net_gettingData = new Net_gettingData();
             net_gettingData.getAllFromWeb_and_localsave(context);
 
-            return "Done";
+            return names[0];
 
         }catch (Exception e){
             Log.e("Error",e.toString());
-            return "Error";
+            return "-1";
         }
 
     }
@@ -76,6 +77,7 @@ public class Net_insertion {
                 Log.i("ADDUSER INFO DATAS",names[i] +"\n");
             }
             String data =
+                    URLEncoder.encode("id","UTF-8") + "=" +URLEncoder.encode(names[0],"UTF-8") + "&" +
                     URLEncoder.encode("firstname","UTF-8") + "=" +URLEncoder.encode(names[1],"UTF-8") + "&" +
                     URLEncoder.encode("lastname","UTF-8") + "=" +URLEncoder.encode(names[2],"UTF-8") + "&" +
                     URLEncoder.encode("categorie","UTF-8") + "=" +URLEncoder.encode("rien","UTF-8") + "&" +

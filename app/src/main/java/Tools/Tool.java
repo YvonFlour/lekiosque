@@ -78,4 +78,17 @@ public class Tool extends AppCompatActivity {
         }
     }
 
+    public static String haveToken(){
+        Date date = new Date();
+        String token = "";
+        token += String.valueOf(date.getDate())
+                +String.valueOf(date.getMonth()+1)
+                +String.valueOf(date.getYear()+1900)
+                +String.valueOf(date.getHours())
+                +String.valueOf(date.getMinutes())
+                +String.valueOf(date.getSeconds()
+                +String.valueOf(date.getDate()));
+        return String.valueOf(date.getTime());
+    }
+
 }

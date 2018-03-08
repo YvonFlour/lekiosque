@@ -28,14 +28,19 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedWriter;
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -52,7 +57,7 @@ public class Blank_Annonce extends AppCompatActivity {
     NotificationManager notificationManager;
 
     private String selectedFilePath;
-
+    String ID_NOTICE = null;
     private TextView    Choose_Annonce_Image,img_path;
     private ImageView   Blank_Image;
     private EditText    Blank_Title,Blank_detail,Blank_prix;
@@ -62,6 +67,7 @@ public class Blank_Annonce extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ID_NOTICE = Tool.haveToken();
         setContentView(R.layout.activity_blank_annonce);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -102,7 +108,8 @@ public class Blank_Annonce extends AppCompatActivity {
             @TargetApi(Build.VERSION_CODES.M)
             @Override
             public void onClick(View view) {
-                ProgressDialog p = ProgressDialog.show(Blank_Annonce.this,"","Chargement...");
+                //ProgressDialog p = ProgressDialog.show(Blank_Annonce.this,"","Chargement...");
+               
                 String title    = Blank_Title.getText().toString();
                 String detail   = Blank_detail.getText().toString();
                 String prix     = Blank_prix.getText().toString();
@@ -112,14 +119,14 @@ public class Blank_Annonce extends AppCompatActivity {
                 //TODO: Vérification de zone de saisi
                 if (title.equals("") || detail.equals("") || prix.equals("") ){
                     Toast.makeText(Blank_Annonce.this, "Veuillez fournir les informations qui manque", Toast.LENGTH_SHORT).show();
+                    //p.dismiss();
                 }
                 else {
                     // TODO : Call for Insering datas' method
-                    SendDataForInsert( title, detail, prix, categorie);
+                    SendDataForInsert( ID_NOTICE, title, detail, prix, categorie);
                     // TODO : Call for Uploading image's method
-                    UploadFile(imgPath);
+                    //UploadFile(imgPath);
                 }
-
 
 //              Intent intent = new Intent(Intent.ACTION_MAIN);
 //              intent.addCategory(Intent.CATEGORY_APP_GALLERY);
@@ -144,7 +151,7 @@ public class Blank_Annonce extends AppCompatActivity {
 
             @Override
             protected Object doInBackground(Object[] params) {
-                return uploadFile(params[0].toString());
+                return null;//uploadFile(params[0].toString());
             }
 
             @Override
@@ -162,7 +169,7 @@ public class Blank_Annonce extends AppCompatActivity {
         }.execute(path);
     }
 
-    public int uploadFile(final String selectedFilePath){
+    public int uploadFile(final String selectedFilePath, String id_notice){
 
         int serverResponseCode = 0;
 
@@ -175,7 +182,7 @@ public class Blank_Annonce extends AppCompatActivity {
 
         int bytesRead,bytesAvailable,bufferSize;
         byte[] buffer;
-        int maxBufferSize = 1 * 1024 * 1024;
+        int maxBufferSize = 1024 * 1024 * 1024;
 
 
         File selectedFile = new File(selectedFilePath);
@@ -206,13 +213,18 @@ public class Blank_Annonce extends AppCompatActivity {
                 connection.setRequestProperty("uploaded_file",selectedFilePath);
 
 
+
+                Log.i("Blank annonce".toUpperCase(), "Notre flush marche !");
+
                 //creating new dataoutputstream
                 dataOutputStream = new DataOutputStream(connection.getOutputStream());
+
 
                 //writing bytes to data outputstream
                 dataOutputStream.writeBytes(twoHyphens + boundary + lineEnd);
                 dataOutputStream.writeBytes("Content-Disposition: form-data; name=\"uploaded_file\";filename=\""
-                        + selectedFilePath + "\"" + lineEnd);
+                        + id_notice + "\"" + lineEnd);
+
 
                 dataOutputStream.writeBytes(lineEnd);
                 Log.e("DATA", "DATA passed ON DATAOUTPUTSTREAM");
@@ -316,7 +328,9 @@ public class Blank_Annonce extends AppCompatActivity {
         String id_user = getUser_Id();
 
 
-        // TODO: on enregistre ces valeurs sur l'instance de la classe Notice a travers les getters
+        // TODO: on enregistre ces valeurs sur l'instance de la classe Notice a travers les setters
+
+        notices.setId(ID_NOTICE);
         notices.setDbTitle(title);
         notices.setDbDetail(detail);
         notices.setDbprix(prix);
@@ -328,15 +342,16 @@ public class Blank_Annonce extends AppCompatActivity {
 
         // TODO: on insert dans la baase de données SQLite
         notices.insert(notices,Blank_Annonce.this);
+        finish();
 
     }
 
-    void SendDataForInsert(String v1,String v2,String v3,String v4){
+    void SendDataForInsert(String v0, String v1,String v2,String v3,String v4){
         AsyncTask task = new AsyncTask() {
             ProgressDialog p;
             @Override
             protected void onPreExecute() {
-                p = ProgressDialog.show(Blank_Annonce.this,"","Veuillez patienter...");
+               // p = ProgressDialog.show(Blank_Annonce.this,"","Veuillez patienter...");
                 super.onPreExecute();
             }
 
@@ -344,26 +359,30 @@ public class Blank_Annonce extends AppCompatActivity {
             protected Object doInBackground(Object[] params) {
                 String[] data = {
                         params[0].toString(),params[1].toString(),
-                        params[2].toString(),params[3].toString()
+                        params[2].toString(),params[3].toString(),
+                        params[4].toString()
                 };
-
-                return Net_insertion.addNotice(Blank_Annonce.this, data );
+                String ret = Net_insertion.addNotice(Blank_Annonce.this, data );
+                if(!ret.equals("-1")){
+                  return   uploadFile(img_path.getText().toString(), ret);
+                }
+                return null;
             }
 
             @Override
             protected void onPostExecute(Object o) {
                 //p.dismiss();
 
-                if (o.equals("Done")) Notification(notificationManager);
+                if (o.equals("Article est publié")) Notification(notificationManager);
 
                 //TODO : Après  avoir enregistré en ligne, on enregistre aussi en local
-                //insertInLocal();
+                insertInLocal();
 
                 Toast.makeText(Blank_Annonce.this, o.toString(), Toast.LENGTH_SHORT).show();
                 super.onPostExecute(o);
             }
 
-        }.execute(v1,v2,v3,v4);
+        }.execute(v0, v1,v2,v3,v4);
     }
 
     public void Notification(NotificationManager notificationManager){
@@ -406,7 +425,7 @@ public class Blank_Annonce extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), SplashScreen.class));
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
         super.onBackPressed();
     }

@@ -42,7 +42,6 @@ public class Blank_Profil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blank_profil);
 
-
         identity    = (CardView)findViewById(R.id.Card_identity);
         contact     = (CardView)findViewById(R.id.Card_contact);
         other       = (CardView)findViewById(R.id.Card_other);
@@ -126,11 +125,15 @@ public class Blank_Profil extends AppCompatActivity {
     void SetProfil(){
         try {
             Profil profil = new Profil();
+                profil.setId(Tool.haveToken());
                 profil.setFirstname(user_firstname.getText().toString());
                 profil.setLastname(user_lastname.getText().toString());
                 profil.setCellphone(user_phone.getText().toString());
                 profil.setEmail(user_email.getText().toString());
                 profil.setAdresse(user_adress.getText().toString());
+
+            Log.i("PROFIL DATAS FOR LOCAL",
+                    profil.getFirstname()+profil.getLastname()+ profil.getCellphone()+profil.getEmail()+profil.getAdresse());
 
             /**
              * insertion dans la base de données locale
@@ -158,22 +161,13 @@ public class Blank_Profil extends AppCompatActivity {
     void Net_addUser(){
         @SuppressLint("StaticFieldLeak") AsyncTask tast = new AsyncTask() {
 
-            ProgressDialog p;
-
-            @Override
-            protected void onPreExecute() {
-                //p = ProgressDialog.show(Blank_Profil.this,"","Veuillez patienter...");
-                super.onPreExecute();
-            }
-
             @Override
             protected Object doInBackground(Object[] params) {
 
                 ArrayList<Profil> DataProfil = Profil.SQLite_getProfil(Blank_Profil.this);
-                Log.i("DATA SIZE",String.valueOf(DataProfil.size()));
-                if (DataProfil.size()>1){
+                if (DataProfil.size()>=1){
 
-                    Profil profil = DataProfil.get(1);
+                    Profil profil = DataProfil.get(0);
                     String[] data = new String[]{
                             profil.getId(),
                             profil.getFirstname(),
@@ -184,7 +178,6 @@ public class Blank_Profil extends AppCompatActivity {
                             profil.getAdresse()
                     };
 
-                    Log.i("ADDUSER INFO TASK","passed");
                     return Net_insertion.addUser(data);
                 }else {
                     Log.e("ADDUSER ERROR TASK","not passed");
@@ -198,11 +191,11 @@ public class Blank_Profil extends AppCompatActivity {
             protected void onPostExecute(Object o) {
                 super.onPostExecute(o);
                 Toast.makeText(Blank_Profil.this, o.toString(), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(Blank_Profil.this,SplashScreen.class));
             }
 
         }.execute();
     }
-
 
 
     void pickPicture(){

@@ -112,6 +112,7 @@ public class Fragment1 extends Fragment {
                     article_recycler.setLayoutManager(new LinearLayoutManager(getContext()));
                     article_recycler.setAdapter(adapter);
 
+
                    /* article_list.setAdapter(a);
                     article_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                         @Override

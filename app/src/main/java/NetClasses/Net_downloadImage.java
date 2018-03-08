@@ -49,24 +49,25 @@ public class Net_downloadImage extends AsyncTask<String, Void, Bitmap> {
         String urldisplay = urls[0];
         Bitmap mIcon11 = null;
 
-        //TODO; on teste s'il existe l'image dans le divice
+        //TODO: we are testing if the file exist in local
         try{
             FileInputStream image = context.openFileInput(urls[1]);
             // Je tente de lire le fichier en local, supposant qu'il
             // existe déjà
             mIcon11 = BitmapFactory.decodeStream(image);
             Log.i("Net_downloadImage".toUpperCase(), "L'image existe en local");
-            // Je crée le Bitmap avec l'objet Stream du fichier
-            return mIcon11; // Je retourne l'image démandée
+            // I create de bitmap with Stream object
+            return mIcon11; // And I return that bitmap
         } catch (FileNotFoundException e) {
             e.printStackTrace();
 
-            //TODO    Au cas où l'image n'existe pas, je lance le téléchargement
+            //TODO : If file of image don't exist in local storage, I'm starting dowload Here.
             try {
                 InputStream in = new java.net.URL(urldisplay).openStream();
                 /*
-                    Ici je crée le fichier en local, dont le nom du fichier
-                    correspond à l'Id de l'annonce, avec l'extention .jpg
+                    Here, I create the file in local storage,
+                    the name of this file is de id property of whose notice
+                    and finish by .jpg
                 */
                 FileOutputStream image = context.openFileOutput(urls[1], Context.MODE_PRIVATE);
                 byte[] buf = new byte[1];
@@ -85,6 +86,6 @@ public class Net_downloadImage extends AsyncTask<String, Void, Bitmap> {
 
     protected void onPostExecute(Bitmap result) {
         // Setting bitmap in our ImageView
-        bmImage.setImageBitmap(result);
+       if(bmImage != null ) bmImage.setImageBitmap(result);
     }
 }

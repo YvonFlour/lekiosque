@@ -16,16 +16,16 @@
         "source": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\src\\main\\res\\drawable\\done_white.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_common_plus_signin_btn_text_dark_normal.9.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-xhdpi\\common_plus_signin_btn_text_dark_normal.9.png"
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_edit_text_material.xml.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_common_google_signin_btn_icon_light_disabled.9.png.flat",
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-xxhdpi\\common_google_signin_btn_icon_light_disabled.9.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_edit_text_material.xml.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable\\abc_edit_text_material.xml"
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_common_plus_signin_btn_text_dark_normal.9.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-xhdpi\\common_plus_signin_btn_text_dark_normal.9.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_abc_ic_clear_mtrl_alpha.png.flat",
@@ -64,16 +64,16 @@
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-hdpi\\common_plus_signin_btn_text_dark_disabled.9.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_plus_signin_btn_text_dark.xml.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable\\common_plus_signin_btn_text_dark.xml"
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable-ldrtl-mdpi\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_common_google_signin_btn_icon_dark_focused.9.png.flat",
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-xhdpi\\common_google_signin_btn_icon_dark_focused.9.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable-ldrtl-mdpi\\abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_plus_signin_btn_text_dark.xml.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable\\common_plus_signin_btn_text_dark.xml"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_common_plus_signin_btn_text_dark_pressed.9.png.flat",
@@ -84,12 +84,12 @@
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-xxhdpi\\common_google_signin_btn_text_dark_pressed.9.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_common_google_signin_btn_text_dark_disabled.9.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-mdpi\\common_google_signin_btn_text_dark_disabled.9.png"
-    },
-    {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_checkbox.xml.flat",
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_common_google_signin_btn_text_dark_disabled.9.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-mdpi\\common_google_signin_btn_text_dark_disabled.9.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
@@ -140,16 +140,16 @@
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-mdpi\\common_google_signin_btn_text_dark_pressed.9.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_common_ic_googleplayservices.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-8.3.0.aar\\265bacd8dc44eda8be0530ceaeeb916d\\res\\drawable-hdpi\\common_ic_googleplayservices.png"
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_btn_check_to_on_mtrl_000.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable-xhdpi\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_btn_check_to_on_mtrl_000.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable-hdpi\\abc_btn_check_to_on_mtrl_000.png"
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_common_ic_googleplayservices.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-8.3.0.aar\\265bacd8dc44eda8be0530ceaeeb916d\\res\\drawable-hdpi\\common_ic_googleplayservices.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -168,12 +168,12 @@
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_abc_btn_radio_to_on_mtrl_015.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable-xxhdpi\\abc_btn_radio_to_on_mtrl_015.png"
-    },
-    {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_scrolling.xml.flat",
         "source": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\src\\main\\res\\menu\\menu_scrolling.xml"
+    },
+    {
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_abc_btn_radio_to_on_mtrl_015.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\drawable-xxhdpi\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
@@ -280,12 +280,12 @@
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-hdpi\\common_google_signin_btn_icon_light_focused.9.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_common_plus_signin_btn_text_dark_focused.9.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-xxhdpi\\common_plus_signin_btn_text_dark_focused.9.png"
-    },
-    {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.1.1.aar\\ddedad3f95812f25c9070af532d7a1bb\\res\\layout\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_common_plus_signin_btn_text_dark_focused.9.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-xxhdpi\\common_plus_signin_btn_text_dark_focused.9.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_common_google_signin_btn_icon_dark_disabled.9.png.flat",
@@ -380,12 +380,12 @@
         "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-mdpi\\common_plus_signin_btn_text_dark_pressed.9.png"
     },
     {
-        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-tvdpi_common_plus_signin_btn_icon_light_normal.9.png.flat",
-        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-tvdpi\\common_plus_signin_btn_icon_light_normal.9.png"
-    },
-    {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
         "source": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-tvdpi_common_plus_signin_btn_icon_light_normal.9.png.flat",
+        "source": "C:\\Users\\Deon-Mass\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-8.3.0.aar\\3522c8ec998b3dec3160be371422efdc\\res\\drawable-tvdpi\\common_plus_signin_btn_icon_light_normal.9.png"
     },
     {
         "merged": "E:\\Projects\\Android_Studio\\LeKIOSQUE\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_common_plus_signin_btn_icon_light_pressed.9.png.flat",

@@ -101,7 +101,7 @@ public class Profil {
     public static String colonne_adresse    = "adresse";
 
     public static final String create_table   = "create table "+table_name+" (" +
-            colonne_id+" integer(5) primary key," +
+            colonne_id+" varchar(25) primary key," +
             colonne_firstname+" varchar (25)," +
             colonne_lastname+" varchar (25)," +
             colonne_categorie+" varchar (25)," +
@@ -118,6 +118,8 @@ public class Profil {
     // TODO ; Insering method
     public static long SQLite_insertProfil(Context context, Profil profil){
         ContentValues values = new ContentValues();
+
+        values.put(colonne_id,        profil.getId());
         values.put(colonne_firstname, profil.getFirstname());
         values.put(colonne_lastname,  profil.getLastname());
         values.put(colonne_categorie, profil.getCategory());

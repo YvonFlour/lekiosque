@@ -87,8 +87,9 @@ public class Net_gettingData {
             if(t==true){
                 Log.i("DATA exist".toUpperCase(), "id "+dataClass.getId()+" existe");
             }else{
-                Log.i("Data dont exist".toUpperCase(), "id "+dataClass.getId()+" dont existe donc j'insert");
+                Log.i("Data don't exist".toUpperCase(), "id "+dataClass.getId()+" dont existe donc j'insert");
                 dataClass.insert(dataClass, context);
+                new Net_downloadImage(context, null).execute(dataClass.getDbImgURL(), dataClass.getId()+".jpg");
             }
 
         }

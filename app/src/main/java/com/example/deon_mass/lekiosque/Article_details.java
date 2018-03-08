@@ -38,20 +38,12 @@ public class Article_details extends AppCompatActivity {
         Intent i = getIntent();
         String Title = i.getStringExtra("ARTICLE_TITRE");
         String url = i.getStringExtra("ARTICLE_URL");
-        String id = i.getStringExtra("ARTICLE_NOTICE_ID");
+        String id = i.getStringExtra("id_notice");
         setTitle(Title);
         new Net_downloadImage(Article_details.this , img).execute(url, id+".jpg");
-        //img.setImageURI(Uri.parse(url));
 
 
-        /*Bundle bundle = getIntent().getExtras();
-        if (bundle != null){
-            setTitle(bundle.getString(Title));
-            String way = bundle.getString(url);
-            img.setImageURI(Uri.parse(way));
-        }*/
 
-        //ImageView picture = (ImageView)findViewById(R.id.Detail_picture_view);
 
     }
 
