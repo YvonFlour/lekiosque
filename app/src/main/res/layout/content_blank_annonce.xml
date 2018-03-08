@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bac3"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.deon_mass.lekiosque.Blank_Annonce">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fff"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Nouvelle Annonce "
+            android:padding="5dp"
+            android:textColor="#fff"
+            android:textSize="15dp"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:background="#fff"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_marginBottom="15dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="3dp">
+
+                    <EditText
+                        android:elevation="15dp"
+                        android:id="@+id/Blank_titre"
+                        android:singleLine="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:hint="Titre de votre annonce"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:textSize="17dp"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_marginBottom="15dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:elevation="15dp"
+                        android:id="@+id/Blank_Detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:hint="Description de votre annonce"
+                        android:inputType="textMultiLine"
+                        android:maxLength="100"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_marginBottom="15dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="250dp"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:elevation="15dp"
+                        android:id="@+id/Blank_Prix"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="17dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="@color/colorPrimary"
+                        android:hint="Prix"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:maxLength="5"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/corner_gray"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="end"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/devise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:entries="@array/devise"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:elevation="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="15dp">
+
+
+                <TextView
+                    android:visibility="visible"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Categorie :"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="17dp"
+                    android:layout_marginRight="5dp"/>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/colorPrimaryDark"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/Blank_categorie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/Product_categorie"
+                        android:padding="10dp"
+                        android:background="@drawable/corner_gray"></Spinner>
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:elevation="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="2dp">
+
+                    <TextView
+                        android:id="@+id/Choose_Annonce_Image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:gravity="center_vertical"
+                        android:text="Choisir une image"
+                        android:drawableRight="@android:drawable/ic_menu_camera"
+                        android:drawablePadding="7dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="5dp"
+                        android:textSize="17dp"/>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/Blank_Image"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/corner"
+                    android:src="@drawable/avatar_default"/>
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/img_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                android:textColor="#9c7b7b7b"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:textSize="11dp"
+                android:textStyle="italic"
+                android:text=""/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:background="@drawable/corner_gray"
+                android:layout_marginBottom="15dp">
+
+                <CheckBox
+                    android:id="@+id/CheckCondition"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Acceptez les conditions de publication et le terme de confidentialité"
+                    android:textColor="#646464"
+                    android:elevation="15dp"
+                    android:textStyle="italic"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,182 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:16:1-28:12
+MERGED from [com.android.support:design:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\a521c82fcc2bfc0a35a99e1bf07ec902\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\ddedad3f95812f25c9070af532d7a1bb\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.1.1.aar\653159ca9040f3c18eba6c9e33cbdced\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-base:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-base-8.3.0.aar\3522c8ec998b3dec3160be371422efdc\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\cdeb1248f855e694622f0698b6b859b5\AndroidManifest.xml:17:1-24:12
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37ba9e574360237ebf34e8f35aa622c1\AndroidManifest.xml:2:1-11:12
+MERGED from [com.mcxiaoke.volley:library-aar:1.0.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\library-aar-1.0.0.aar\b455f085e5aee1d21e30c02cb88c9e39\AndroidManifest.xml:1:70-7:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b91460fdee277f4845ff34b8afb0cc43\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\563c1af504c045e50d163a4f11d2f42b\AndroidManifest.xml:17:1-24:12
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+	package
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:3:5-46
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:1-40:12
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.CALL_PHONE
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:5:5-69
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:5:22-66
+uses-permission#android.permission.INTERNET
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:6:5-67
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:21:5-66
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:20:5-78
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:8:5-80
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:8:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:9:22-78
+uses-permission#android.permission.MEDIA_CONTENT_CONTROL
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:10:5-80
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:10:22-77
+application
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:12:5-38:19
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:27:5-20
+MERGED from [com.android.support:design:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\a521c82fcc2bfc0a35a99e1bf07ec902\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\a521c82fcc2bfc0a35a99e1bf07ec902\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\ddedad3f95812f25c9070af532d7a1bb\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\ddedad3f95812f25c9070af532d7a1bb\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\cdeb1248f855e694622f0698b6b859b5\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\cdeb1248f855e694622f0698b6b859b5\AndroidManifest.xml:22:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37ba9e574360237ebf34e8f35aa622c1\AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37ba9e574360237ebf34e8f35aa622c1\AndroidManifest.xml:9:5-20
+MERGED from [com.mcxiaoke.volley:library-aar:1.0.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\library-aar-1.0.0.aar\b455f085e5aee1d21e30c02cb88c9e39\AndroidManifest.xml:5:5-19
+MERGED from [com.mcxiaoke.volley:library-aar:1.0.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\library-aar-1.0.0.aar\b455f085e5aee1d21e30c02cb88c9e39\AndroidManifest.xml:5:5-19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b91460fdee277f4845ff34b8afb0cc43\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b91460fdee277f4845ff34b8afb0cc43\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\563c1af504c045e50d163a4f11d2f42b\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\563c1af504c045e50d163a4f11d2f42b\AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:16:9-35
+	android:label
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:15:9-41
+	android:icon
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:14:9-38
+	android:allowBackup
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:17:9-40
+activity#com.example.deon_mass.lekiosque.SplashScreen
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:18:9-24:20
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:18:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:22:27-74
+activity#com.example.deon_mass.lekiosque.MainActivity
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:25:9-28:59
+	android:label
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:27:13-56
+	android:theme
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:28:13-56
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:26:13-41
+activity#com.example.deon_mass.lekiosque.Article_details
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:29:9-32:59
+	android:label
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:31:13-67
+	android:theme
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:32:13-56
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:30:13-44
+activity#com.example.deon_mass.lekiosque.Blank_Annonce
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:33:9-36:59
+	android:label
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:35:13-66
+	android:theme
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:36:13-56
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:34:13-42
+activity#com.example.deon_mass.lekiosque.Blank_Profil
+ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:37:9-59
+	android:name
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml:37:19-47
+uses-sdk
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:26:5-42
+MERGED from [com.android.support:design:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\a521c82fcc2bfc0a35a99e1bf07ec902\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\design-23.1.1.aar\a521c82fcc2bfc0a35a99e1bf07ec902\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\ddedad3f95812f25c9070af532d7a1bb\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.1.1.aar\ddedad3f95812f25c9070af532d7a1bb\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.1.1.aar\653159ca9040f3c18eba6c9e33cbdced\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.1.1.aar\653159ca9040f3c18eba6c9e33cbdced\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-base:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-base-8.3.0.aar\3522c8ec998b3dec3160be371422efdc\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-base-8.3.0.aar\3522c8ec998b3dec3160be371422efdc\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\cdeb1248f855e694622f0698b6b859b5\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\support-v4-23.1.1.aar\cdeb1248f855e694622f0698b6b859b5\AndroidManifest.xml:20:5-43
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37ba9e574360237ebf34e8f35aa622c1\AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\circleimageview-2.2.0.aar\37ba9e574360237ebf34e8f35aa622c1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.mcxiaoke.volley:library-aar:1.0.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\library-aar-1.0.0.aar\b455f085e5aee1d21e30c02cb88c9e39\AndroidManifest.xml:3:5-72
+MERGED from [com.mcxiaoke.volley:library-aar:1.0.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\library-aar-1.0.0.aar\b455f085e5aee1d21e30c02cb88c9e39\AndroidManifest.xml:3:5-72
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b91460fdee277f4845ff34b8afb0cc43\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\b91460fdee277f4845ff34b8afb0cc43\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\563c1af504c045e50d163a4f11d2f42b\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:23.1.1] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\cardview-v7-23.1.1.aar\563c1af504c045e50d163a4f11d2f42b\AndroidManifest.xml:20:5-43
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+		ADDED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+		INJECTED from E:\Projects\Android_Studio\LeKIOSQUE\app\src\main\AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:22:5-24:33
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:23:8-40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-maps-8.3.0.aar\c54f675683c2b062fe45d909352b90f4\AndroidManifest.xml:24:8-31
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:8.3.0] C:\Users\Deon-Mass\.gradle\caches\transforms-1\files-1.1\play-services-basement-8.3.0.aar\265bacd8dc44eda8be0530ceaeeb916d\AndroidManifest.xml:22:13-58

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.CardView
+        android:layout_margin="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#ffffff"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/picture_modele"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:scaleType="fitXY"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$1000"
+                    android:background="#8f7b7b7b"
+                    android:elevation="20dp"
+                    android:textColor="#ffffff"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="10dp"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_marginTop="-15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:background="#4d7cba"
+                    android:textAlignment="center"
+                    android:id="@+id/annonce_Text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TITRE ANNONCE"
+                    android:textColor="#d0f598"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/imageUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:textAlignment="center"
+                    android:id="@+id/annonce_date_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="$ 100000"
+                    android:padding="5dp"
+                    android:background="@color/colorPrimary"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+</RelativeLayout>
+
+
+
+
