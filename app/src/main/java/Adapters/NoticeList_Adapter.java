@@ -42,7 +42,7 @@ public class NoticeList_Adapter extends ArrayAdapter<Notices> {
         final Notices note = _Notice.get(position);
         if (note != null){
             //TODO : Setting title
-            TextView title = (TextView)convertView.findViewById(R.id.annonce_Text);
+            TextView title = (TextView)convertView.findViewById(R.id.template_title);
             String _title = note.getDbTitle();
             title.setText(_title);
 
@@ -62,13 +62,13 @@ public class NoticeList_Adapter extends ArrayAdapter<Notices> {
              */
 
             //TODO : Setting time
-            TextView dateTime = (TextView)convertView.findViewById(R.id.annonce_date_time);
+            TextView dateTime = (TextView)convertView.findViewById(R.id.template_date);
             String _time = note.getDbTime();
             String dateFormated =  "Today à "+_time;
             dateTime.setText(dateFormated);
 
             //TODO : Setting Image
-            ImageView picture_modele = (ImageView)convertView.findViewById(R.id.picture_modele);
+            ImageView picture_modele = (ImageView)convertView.findViewById(R.id.template_image);
             String path = note.getDbImgURL();
 
             //TODO : Calling class for loading image from server using the path get from online database

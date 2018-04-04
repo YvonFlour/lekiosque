@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -18,12 +20,15 @@ import android.widget.RemoteViews;
 import com.example.deon_mass.lekiosque.MainActivity;
 import com.example.deon_mass.lekiosque.R;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import id.zelory.compressor.Compressor;
 
 /**
  * Created by Deon-Mass on 18/02/2018.
@@ -90,5 +95,29 @@ public class Tool extends AppCompatActivity {
                 +String.valueOf(date.getDate()));
         return String.valueOf(date.getTime());
     }
+
+    /*public NetworkInfo CONNECTIVITY(){
+        ConnectivityManager manager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = manager.getActiveNetworkInfo();
+        return info;
+    }*/
+
+    public File resizeImg(File filee){
+        try {
+            File compressed = new Compressor(this)
+                    .setMaxHeight(500)
+                    .setMaxWidth(500)
+                    .setQuality(50)
+                    .setCompressFormat(Bitmap.CompressFormat.JPEG)
+                    .compressToFile(filee);
+            return compressed;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return filee;
+        }
+
+    }
+
+
 
 }

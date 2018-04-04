@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context="Fragments.Fragment1">
+    tools:context="Fragments.Fragment_Articles">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,25 +14,30 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:gravity="center_vertical"
             android:background="@color/colorPrimary"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/Article_Titre"
+            <Spinner
+                android:id="@+id/CMB_Categorie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Categorie"
-                android:padding="10dp"
-                android:textColor="@color/colorAccentText"
-                android:textSize="15dp"/>
+                android:entries="@array/Categorie"
+                android:spinnerMode="dialog"
+                android:padding="10dp"></Spinner>
 
-            <Spinner
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:entries="@array/categorie"
-                android:padding="10dp"></Spinner>
+                android:gravity="end">
+
+                <android.support.v7.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -44,20 +49,14 @@
             android:paddingRight="10dp"
             android:orientation="vertical">
 
-            <android.support.v4.widget.SwipeRefreshLayout
-                android:id="@+id/switch_activator"
+            <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:numColumns="auto_fit"
+                android:id="@+id/list_article_recycler">
 
-                <android.support.v7.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:numColumns="auto_fit"
-                    android:id="@+id/list_article_recycler">
+            </android.support.v7.widget.RecyclerView>
 
-                </android.support.v7.widget.RecyclerView>
-
-            </android.support.v4.widget.SwipeRefreshLayout>
 
 
         </LinearLayout>

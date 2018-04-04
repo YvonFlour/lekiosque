@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.deon_mass.lekiosque.ScrollingActivity">
+
+    <item android:id="@+id/M_actualiser"    android:title="Actualiser" />
+    <item android:id="@+id/M_astuce"        android:title="Astuces"/>
+    <item android:id="@+id/M_profil"        android:title="Mon profil"/>
+    <item android:id="@+id/M_publication"   android:title="Publier un article" />
+    <item android:id="@+id/M_Exit"          android:title="Quitter"/>
+
+
+</menu>

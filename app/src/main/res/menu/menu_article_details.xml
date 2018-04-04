@@ -2,9 +2,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.deon_mass.lekiosque.Article_details">
+
     <item
         android:id="@+id/action_settings"
+        android:icon="@android:drawable/ic_menu_camera"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+        android:title="Menu 1"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_settings2"
+        android:icon="@android:drawable/star_big_off"
+        android:orderInCategory="100"
+        android:title="Menu 2"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_settings3"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:orderInCategory="100"
+        android:title="Menu 3"
+        app:showAsAction="always" />
 </menu>

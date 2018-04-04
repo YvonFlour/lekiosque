@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context="com.example.deon_mass.lekiosque.MonProfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fff"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:layout_gravity="bottom"
+            android:textSize="17dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="end|bottom">
+
+            <ImageView
+                android:id="@+id/P_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:paddingTop="7dp"
+                android:src="@android:drawable/ic_menu_edit"/>
+            <TextView
+                android:id="@+id/P_effectue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="7dp"
+                android:paddingRight="7dp"
+                android:paddingTop="7dp"
+                android:text="Effectué"
+                android:textSize="20dp"
+                android:src="@android:drawable/sym_action_chat"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="50dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:elevation="15dp"
+                android:gravity="center">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="#1c000000"
+                    android:paddingBottom="10dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="N° du de l'utilisateur"
+                        android:textSize="15dp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="N° du de l'utilisateur"
+                        android:textSize="15dp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/P_img"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:elevation="-50dp"
+                    android:src="@drawable/avatar_default" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/P_pickPicture"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignEnd="@+id/P_img"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignRight="@+id/P_img"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginRight="26dp"
+                    android:background="@drawable/oval_blue"
+                    android:src="@android:drawable/ic_menu_camera" />
+
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/newpath"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#27878787"
+                android:elevation="15dp"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/P_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Firstname"
+                    android:hint="Firstname"
+                    android:focusableInTouchMode="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:enabled="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#27dfdfdf"
+                android:elevation="15dp"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/P_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Lastname"
+                    android:hint="Lastname"
+                    android:focusableInTouchMode="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:enabled="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#27878787"
+                android:elevation="15dp"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/P_cellphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Téléphone"
+                    android:hint="Téléphone"
+                    android:inputType="number"
+                    android:focusableInTouchMode="true"
+                    android:drawableRight="@android:drawable/stat_sys_phone_call"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:enabled="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#27dfdfdf"
+                android:elevation="15dp"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/P_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="E-mail"
+                    android:hint="E-mail"
+                    android:focusableInTouchMode="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:enabled="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#27878787"
+                android:elevation="15dp"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/P_adresse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Adresse"
+                    android:hint="Adresse"
+                    android:focusableInTouchMode="true"
+                    android:drawableRight="@android:drawable/ic_dialog_map"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:enabled="false"/>
+
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#27dfdfdf"
+                android:elevation="15dp"
+                android:padding="5dp">
+
+                <EditText
+                    android:id="@+id/P_categorie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Categorie"
+                    android:hint="Categorie"
+                    android:focusableInTouchMode="true"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20dp"
+                    android:enabled="false"/>
+                <Spinner
+                    android:id="@+id/P_spinner_categorie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/categorie"></Spinner>
+
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

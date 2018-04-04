@@ -6,8 +6,10 @@ import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
-import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -15,39 +17,30 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RemoteViews;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedWriter;
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.Date;
 
-import Db.Notices;
 import Db.Profil;
+import NetClasses.Net_downloadImage;
 import NetClasses.Net_httpAdresses;
-import NetClasses.Net_insertion;
+import NetClasses.Net_updateMethod;
 import Tools.FilePath;
 import Tools.Tool;
 
@@ -55,13 +48,14 @@ public class Blank_Annonce extends AppCompatActivity {
 
     private static final int PICK_FILE_REQUEST = 1;
     NotificationManager notificationManager;
+    String TITLE, URL, ID, DETAIL, PRIX, DEVISE,CATEGORIE;
 
     private String selectedFilePath;
     String ID_NOTICE = null;
     private TextView    Choose_Annonce_Image,img_path;
     private ImageView   Blank_Image;
     private EditText    Blank_Title,Blank_detail,Blank_prix;
-    private Spinner     Blank_categorie,devise;
+    private Spinner     Blank_categorie,Blank_devise;
     private CheckBox    CheckCondition;
 
     @Override
@@ -71,19 +65,134 @@ public class Blank_Annonce extends AppCompatActivity {
         setContentView(R.layout.activity_blank_annonce);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //TODO: Initialisation des vues
-        notificationManager = (NotificationManager)this.getSystemService(NOTIFICATION_SERVICE);
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setVisibility(View.GONE);
-        Blank_Title     = (EditText) findViewById(R.id.Blank_titre);
-        Blank_detail    = (EditText) findViewById(R.id.Blank_Detail);
-        Blank_prix      = (EditText) findViewById(R.id.Blank_Prix);
-        Blank_categorie = (Spinner) findViewById(R.id.Blank_categorie);
-        devise          = (Spinner) findViewById(R.id.devise);
-        img_path        = (TextView) findViewById(R.id.img_path);
-        CheckCondition  = (CheckBox) findViewById(R.id.CheckCondition);
+
+        //TODO: Initialisation des vues
+        notificationManager  = (NotificationManager)this.getSystemService(NOTIFICATION_SERVICE);
+        Blank_Title          = (EditText) findViewById(R.id.Blank_titre);
+        Blank_detail         = (EditText) findViewById(R.id.Blank_Detail);
+        Blank_prix           = (EditText) findViewById(R.id.Blank_Prix);
+        Blank_devise         = (Spinner)  findViewById(R.id.devise);
+        Blank_categorie      = (Spinner)  findViewById(R.id.Blank_categorie);
+        Blank_Image          = (ImageView) findViewById(R.id.Blank_Image);
+        img_path             = (TextView) findViewById(R.id.img_path);
+        CheckCondition       = (CheckBox) findViewById(R.id.CheckCondition);
         Choose_Annonce_Image = (TextView) findViewById(R.id.Choose_Annonce_Image);
+
+
+        //TODO: Recevoir l'intent
+        final Intent i = getIntent();
+
+        if (!i.hasExtra("NOTHING")){
+            /**
+             * Si l'intent envoyé n'a pas l'EXTRA NOTHING,
+             * Dans ce case nous somme devant une modification
+             */
+                // Enregistrement des Extras dans des varibles
+                URL         = i.getStringExtra("ARTICLE_URL");
+                ID          = i.getStringExtra("ARTICLE_NOTICE_ID");
+                TITLE       = i.getStringExtra("ARTICLE_TITRE");
+                DETAIL      = i.getStringExtra("ARTICLE_NOTICE_DETAIL");
+                PRIX        = i.getStringExtra("ARTICLE_NOTICE_PRIX");
+                DEVISE      = i.getStringExtra("ARTICLE_NOTICE_DEVISE");
+                CATEGORIE   = i.getStringExtra("ARTICLE_NOTICE_CATEGORIE");
+
+                Blank_Title.setText(TITLE);
+                Blank_detail.setText(DETAIL);
+                Blank_prix.setText(PRIX);
+                //if ( DEVISE.equals("USD")) Blank_devise.setSelection(0);
+                //else Blank_devise.setSelection(1);
+
+                try{
+                    Blank_Image.setVisibility(View.VISIBLE);
+                    new Net_downloadImage(this , Blank_Image).execute(URL, ID+".jpg");
+                }catch (Exception ez){
+                    Log.e("Article_detail".toUpperCase(), "J'ai une erreur du fichier!");
+                    Log.e("Article_detail".toUpperCase(), ez.getMessage());
+                }
+
+
+                fab.setOnClickListener(new View.OnClickListener() {
+                    @TargetApi(Build.VERSION_CODES.M)
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(Blank_Annonce.this, "Edition", Toast.LENGTH_SHORT).show();
+
+                        String title    = Blank_Title.getText().toString();
+                        String detail   = Blank_detail.getText().toString();
+                        String prix     = Blank_prix.getText().toString();
+                        String devise   = Blank_devise.getSelectedItem().toString();
+                        String categorie= Blank_categorie.getSelectedItem().toString();
+                        String id_user  = Profil.getUser_Id(Blank_Annonce.this);
+                        final String imgPath = img_path.getText().toString();
+
+
+                        //TODO: Vérification de zone de saisi
+                        if (title.equals("") || detail.equals("") || prix.equals("") ){
+                            Toast.makeText(Blank_Annonce.this, "Veuillez fournir les informations qui manque", Toast.LENGTH_SHORT).show();
+                        }
+                        else {
+
+                            ConnectivityManager manager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+                            NetworkInfo info = manager.getActiveNetworkInfo();
+
+                            if (info != null && info.isConnected()){
+                                // TODO : Call for editing datas' method
+                                SendDataForEdit( ID, title, detail, prix, devise, categorie,id_user);
+                            }else{
+                                Toast.makeText(Blank_Annonce.this, "Pas de connexion !!!", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+
+                    }
+                });
+
+        }else{
+            /**
+             * Si l'intent envoyé n'a pas l'EXTRA NOTHING,
+             * Dans ce case nous somme devant une insertion
+             */
+            fab.setOnClickListener(new View.OnClickListener() {
+                @TargetApi(Build.VERSION_CODES.M)
+                @Override
+                public void onClick(View view) {
+                    String title    = Blank_Title.getText().toString();
+                    String detail   = Blank_detail.getText().toString();
+                    String prix     = Blank_prix.getText().toString();
+                    String devise   = Blank_devise.getSelectedItem().toString();
+                    String categorie= Blank_categorie.getSelectedItem().toString();
+                    String id_user  = Profil.getUser_Id(Blank_Annonce.this);
+                    final String imgPath = img_path.getText().toString();
+
+
+                    //TODO: Vérification de zone de saisi
+                    if (TextUtils.isEmpty(title)){
+                        Blank_Title.setError("Verillez remplir");
+                    }
+                    else if (TextUtils.isEmpty(detail)){
+                        Blank_detail.setError("Verillez remplir");
+                    }
+                    else if (TextUtils.isEmpty(prix)){
+                        Blank_prix.setError("Verillez remplir");
+                    }
+                    else {
+
+                        ConnectivityManager manager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+                        NetworkInfo info = manager.getActiveNetworkInfo();
+
+                        if (info != null && info.isConnected()){
+                            SendDataForInsert( ID_NOTICE, title, detail, prix, devise, categorie,id_user);
+                        }else{
+                            Toast.makeText(Blank_Annonce.this, "Pas de connexion !!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                }
+            });
+        }
+
 
         //TODO: les listeners pour les cliques sur le vues
         Choose_Annonce_Image.setOnClickListener(new View.OnClickListener() {
@@ -96,80 +205,118 @@ public class Blank_Annonce extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked == true) {
+                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoonin);
                     fab.setVisibility(View.VISIBLE);
+                    fab.startAnimation(animation);
                 }else{
+                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoonout);
+                    fab.startAnimation(animation);
                     fab.setVisibility(View.GONE);
                 }
             }
         });
 
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @TargetApi(Build.VERSION_CODES.M)
-            @Override
-            public void onClick(View view) {
-                //ProgressDialog p = ProgressDialog.show(Blank_Annonce.this,"","Chargement...");
-               
-                String title    = Blank_Title.getText().toString();
-                String detail   = Blank_detail.getText().toString();
-                String prix     = Blank_prix.getText().toString();
-                String categorie= Blank_categorie.getSelectedItem().toString();
-                final String imgPath = img_path.getText().toString();
-
-                //TODO: Vérification de zone de saisi
-                if (title.equals("") || detail.equals("") || prix.equals("") ){
-                    Toast.makeText(Blank_Annonce.this, "Veuillez fournir les informations qui manque", Toast.LENGTH_SHORT).show();
-                    //p.dismiss();
-                }
-                else {
-                    // TODO : Call for Insering datas' method
-                    SendDataForInsert( ID_NOTICE, title, detail, prix, categorie);
-                    // TODO : Call for Uploading image's method
-                    //UploadFile(imgPath);
-                }
-
-//              Intent intent = new Intent(Intent.ACTION_MAIN);
-//              intent.addCategory(Intent.CATEGORY_APP_GALLERY);
-//              startActivityForResult(intent,10);
-
-            }
-        });
-
 
     }
 
-
-    //android upload file to server
-    void UploadFile(String path){
+    //                     ID_NOTICE, title,    detail,   prix,     devise,   categorie,id_user
+    void SendDataForEdit(String v0, String v1,String v2,String v3,String v4,String v5,String v6){
         AsyncTask task = new AsyncTask() {
             ProgressDialog p;
             @Override
             protected void onPreExecute() {
-                //p = ProgressDialog.show(getApplicationContext(), "", "Chargement en cours.....", true);
+                p = ProgressDialog.show(Blank_Annonce.this, "", "Veuillez patienter...");
                 super.onPreExecute();
             }
 
             @Override
             protected Object doInBackground(Object[] params) {
-                return null;//uploadFile(params[0].toString());
+                String[] data = {
+                        params[0].toString(), params[1].toString(),
+                        params[2].toString(), params[3].toString(),
+                        params[4].toString(), params[5].toString(),
+                        Tool.haveToken()
+                };
+
+                String ret = Net_updateMethod.updateNotice(Blank_Annonce.this, data);
+
+
+                if(!ret.equals("Error")){
+                    String path = img_path.getText().toString();
+                    if (path.equals("") || path == null) return 0;
+                    else return   uploadFile(path, params[0].toString(),Net_httpAdresses.SERVER_UPLOAD_PICTURE);
+                }
+                return null;
             }
 
             @Override
             protected void onPostExecute(Object o) {
-                //si le chargement s'est bien fait ou pas, on lance un toast
-                if (((Integer) o) == 200){
-                    Toast.makeText(Blank_Annonce.this, "Succed", Toast.LENGTH_SHORT).show();
+                super.onPostExecute(o);
+                p.dismiss();
+
+                if (o != null || Integer.parseInt((String) o) != 0) {
+                    onBackPressed();
+                    Toast.makeText(Blank_Annonce.this, "Effectué", Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(Blank_Annonce.this, "Echec du chargement du upload", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Blank_Annonce.this, "Echec", Toast.LENGTH_SHORT).show();
                 }
 
-                onBackPressed();
-                super.onPostExecute(o);
             }
-        }.execute(path);
+        }.execute(v0,v1,v2,v3,v4,v5,v6);
     }
 
-    public int uploadFile(final String selectedFilePath, String id_notice){
+
+    //                     ID_NOTICE, title,    detail,   prix,     devise,   categorie,id_user
+    void SendDataForInsert(String v0, String v1,String v2,String v3,String v4,String v5,String v6){
+        AsyncTask task = new AsyncTask() {
+            ProgressDialog p;
+            @Override
+            protected void onPreExecute() {
+                p = ProgressDialog.show(Blank_Annonce.this,"","Veuillez patienter...");
+                super.onPreExecute();
+            }
+
+            @Override
+            protected Object doInBackground(Object[] params) {
+                String[] data = {
+                        params[0].toString(),params[1].toString(),
+                        params[2].toString(),params[3].toString(),
+                        params[4].toString(),params[5].toString(),
+                        params[6].toString()
+                };
+
+                String ret = "";
+                Log.i("TAG","J'insert");
+                ret = Net_updateMethod.addNotice(Blank_Annonce.this, data );
+
+                if(!ret.equals("Error")){
+                    String path = img_path.getText().toString();
+                    if (path.equals("") || path == null) return 0;
+                    else return   uploadFile(path, params[0].toString(),Net_httpAdresses.SERVER_UPLOAD_PICTURE);
+                }
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                super.onPostExecute(o);
+                p.dismiss();
+
+                if (o != null || Integer.parseInt((String) o) != 0) {
+                    onBackPressed();
+                    Toast.makeText(Blank_Annonce.this, "Effectué", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(Blank_Annonce.this, "Echec", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+
+        }.execute(v0,v1,v2,v3,v4,v5,v6);
+    }
+
+    //android upload file to server
+    public int uploadFile(final String selectedFilePath, String id_notice, String Net_Url){
 
         int serverResponseCode = 0;
 
@@ -201,7 +348,7 @@ public class Blank_Annonce extends AppCompatActivity {
         }else{
             try{
                 FileInputStream fileInputStream = new FileInputStream(selectedFile);
-                URL url = new URL(Net_httpAdresses.SERVER_UPLOAD_PICTURE);
+                URL url = new URL(Net_Url);
                 connection = (HttpURLConnection) url.openConnection();
                 connection.setDoInput(true);//Allow Inputs
                 connection.setDoOutput(true);//Allow Outputs
@@ -272,7 +419,7 @@ public class Blank_Annonce extends AppCompatActivity {
 
 
 
-            } catch (FileNotFoundException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 runOnUiThread(new Runnable() {
                     @Override
@@ -281,109 +428,13 @@ public class Blank_Annonce extends AppCompatActivity {
                     }
                 });
                 Log.e("ERROR DATA", "DATA not passed");
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-                Toast.makeText(getApplicationContext(), "URL error!", Toast.LENGTH_SHORT).show();
-                Log.e("ERROR DATA", "DATA not passed");
-            } catch (IOException e) {
-                e.printStackTrace();
-                Toast.makeText(getApplicationContext(), "Cannot Read/Write File!", Toast.LENGTH_SHORT).show();
-                Log.e("ERROR DATA", "DATA not passed");
-
+                return 0;
             }
             return serverResponseCode;
         }
 
     }
 
-
-    //TODO:
-    private String getUser_Id(){
-
-        try {
-            ArrayList<Profil> data = Profil.SQLite_getProfil(Blank_Annonce.this);
-            Profil profil = data.get(1);
-            String id = profil.getId();
-            return id;
-        }catch (Exception e){
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    void insertInLocal(){
-        // TODO: on appelle une instance de la classe Notice
-        Notices notices = new Notices();
-
-        // TODO: on recupère les données sur les zones de saisi du formulaire
-        String title    = Blank_Title.getText().toString();
-        String detail   = Blank_detail.getText().toString();
-        String prix     = Blank_prix.getText().toString();
-        String categorie= Blank_categorie.getSelectedItem().toString();
-        String imgPath = img_path.getText().toString();
-        String date = Tool.format(new Date(),"dd/MM/yyyy");
-        String time = Tool.format(new Date(),"hh:mm");
-
-        //TODO: getting user Identities
-        String id_user = getUser_Id();
-
-
-        // TODO: on enregistre ces valeurs sur l'instance de la classe Notice a travers les setters
-
-        notices.setId(ID_NOTICE);
-        notices.setDbTitle(title);
-        notices.setDbDetail(detail);
-        notices.setDbprix(prix);
-        notices.setDbcategorie(categorie);
-        notices.setDbImgURL(imgPath);
-        notices.setDbDate(date);
-        notices.setDbTime(time);
-        notices.setDbuser(id_user);
-
-        // TODO: on insert dans la baase de données SQLite
-        notices.insert(notices,Blank_Annonce.this);
-        finish();
-
-    }
-
-    void SendDataForInsert(String v0, String v1,String v2,String v3,String v4){
-        AsyncTask task = new AsyncTask() {
-            ProgressDialog p;
-            @Override
-            protected void onPreExecute() {
-               // p = ProgressDialog.show(Blank_Annonce.this,"","Veuillez patienter...");
-                super.onPreExecute();
-            }
-
-            @Override
-            protected Object doInBackground(Object[] params) {
-                String[] data = {
-                        params[0].toString(),params[1].toString(),
-                        params[2].toString(),params[3].toString(),
-                        params[4].toString()
-                };
-                String ret = Net_insertion.addNotice(Blank_Annonce.this, data );
-                if(!ret.equals("-1")){
-                  return   uploadFile(img_path.getText().toString(), ret);
-                }
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Object o) {
-                //p.dismiss();
-
-                if (o.equals("Article est publié")) Notification(notificationManager);
-
-                //TODO : Après  avoir enregistré en ligne, on enregistre aussi en local
-                insertInLocal();
-
-                Toast.makeText(Blank_Annonce.this, o.toString(), Toast.LENGTH_SHORT).show();
-                super.onPostExecute(o);
-            }
-
-        }.execute(v0, v1,v2,v3,v4);
-    }
 
     public void Notification(NotificationManager notificationManager){
 
@@ -412,7 +463,6 @@ public class Blank_Annonce extends AppCompatActivity {
                 if (data != null){
                    Uri selected_Data_Uri = data.getData();
                     String fil = FilePath.getPath(this, selected_Data_Uri);
-                    Blank_Image = (ImageView) findViewById(R.id.Blank_Image);
                     Blank_Image.setImageURI(Uri.parse(fil));
                     Blank_Image.setVisibility(View.VISIBLE);
                     img_path.setText(fil);
@@ -425,7 +475,7 @@ public class Blank_Annonce extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(this, MainActivity.class));
         finish();
         super.onBackPressed();
     }

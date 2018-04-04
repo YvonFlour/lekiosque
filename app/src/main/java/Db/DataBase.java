@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DataBase extends SQLiteOpenHelper {
 
     public static final String db_name = "lekiosque.db";
-    public static final int db_version = 1;
+    public static final int db_version = 3;
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -21,12 +21,16 @@ public class DataBase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(Notices.create_table);
         db.execSQL(Profil.create_table);
+        db.execSQL(Favori.create_table);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         try{
             db.execSQL("DROP TABLE "+Notices.table_name+" ;");
+            db.execSQL("DROP TABLE "+Profil.table_name+" ;");
+            db.execSQL("DROP TABLE "+Favori.table_name+" ;");
+
         }catch (Exception e){
             e.printStackTrace();
         }

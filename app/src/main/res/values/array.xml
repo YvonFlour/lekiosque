@@ -4,4 +4,12 @@
         <item>USD</item>
         <item>CDF</item>
     </string-array>
+
+    <string-array name="Categorie">
+        <item>Informatique</item>
+        <item>Maison</item>
+        <item>Meuble</item>
+        <item>Autre</item>
+    </string-array>
+
 </resources>

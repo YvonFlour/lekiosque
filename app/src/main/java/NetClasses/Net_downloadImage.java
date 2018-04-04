@@ -47,18 +47,21 @@ public class Net_downloadImage extends AsyncTask<String, Void, Bitmap> {
          * Received the image through InputStream from net Url
          */
         String urldisplay = urls[0];
-        Bitmap mIcon11 = null;
+
 
         //TODO: we are testing if the file exist in local
-        try{
+        try {
+            Bitmap mIcon11 = null;
             FileInputStream image = context.openFileInput(urls[1]);
             // Je tente de lire le fichier en local, supposant qu'il
             // existe déjà
             mIcon11 = BitmapFactory.decodeStream(image);
+            image.close();
             Log.i("Net_downloadImage".toUpperCase(), "L'image existe en local");
             // I create de bitmap with Stream object
             return mIcon11; // And I return that bitmap
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
+            Bitmap mIcon11 = null;
             e.printStackTrace();
 
             //TODO : If file of image don't exist in local storage, I'm starting dowload Here.
@@ -71,17 +74,25 @@ public class Net_downloadImage extends AsyncTask<String, Void, Bitmap> {
                 */
                 FileOutputStream image = context.openFileOutput(urls[1], Context.MODE_PRIVATE);
                 byte[] buf = new byte[1];
-                int n  = 0;
-                while((n = in.read(buf))>-1) image.write(buf);
-                return BitmapFactory.decodeStream(in);
+                int n = 0;
+                while ((n = in.read(buf)) > -1) image.write(buf);
+                image.close();
+                buf = null;
+                mIcon11 = BitmapFactory.decodeStream(in);
+                in.close();
+                in = null;
+                return mIcon11;
 
-            } catch (IOException e1) {
+            } catch (Exception e1) {
                 e1.printStackTrace();
                 return null;
+            } catch (Throwable throwable) {
+                throwable.printStackTrace();
             }
 
         }
 
+        return null;
     }
 
     protected void onPostExecute(Bitmap result) {

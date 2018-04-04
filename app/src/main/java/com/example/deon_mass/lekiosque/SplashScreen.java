@@ -2,9 +2,11 @@ package com.example.deon_mass.lekiosque;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -12,7 +14,9 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
+import Db.Notices;
 import Db.Profil;
 import NetClasses.Net_gettingData;
 
@@ -26,27 +30,22 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
 
-
+        Notices.update(SplashScreen.this);
         //CheckStoragePermission();
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // TODO : Research if profil is set before loading data
-                Intent i;
-                if (Profil.SQLite_getProfil(SplashScreen.this).size() <1){
-                    i =new Intent(getApplicationContext(), Blank_Profil.class);
-                    Log.i("CHOICE FOR PROFIL","je lance le formulaire du profil");
-                    startActivity(i);
-                    finish();
-                }else{
-                    LoadData.execute();
-                    Log.i("CHOICE FOR MAIN","je lance la page d'accueille ");
-                }
-            }
-        },1500);
+        // TODO : Research if profil is set before loading data
+        if (Profil.SQLite_getProfil(SplashScreen.this) == null){
+            Log.i("CHOICE FOR PROFIL","je lance le formulaire du profil");
+            startActivity(new Intent(getApplicationContext(), Blank_Profil.class));
+            finish();
+        }else{
+            Log.i("CHOICE FOR PROFIL","Il existe deja un profil en cours");
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            finish();
+        }
 
     }
+
 
     /**
      * this method will show a popup for the activation of permissions
@@ -82,33 +81,5 @@ public class SplashScreen extends AppCompatActivity {
         }
     }
 
-    public AsyncTask LoadData = new AsyncTask(){
-        ProgressDialog p;
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            p = ProgressDialog.show(SplashScreen.this,"","Loading datas...");
-        }
-
-        @Override
-        protected Object doInBackground(Object[] objects) {
-            Net_gettingData net_gettingNotices = new Net_gettingData();
-            try {
-                net_gettingNotices.getAllFromWeb_and_localsave(SplashScreen.this);
-            } catch (Exception e) {e.printStackTrace();}
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Object o) {
-            super.onPostExecute(o);
-            p.dismiss();
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(i);
-            finish();
-        }
-    };
 
 }

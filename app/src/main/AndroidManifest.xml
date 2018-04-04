@@ -34,7 +34,9 @@
             android:name=".Blank_Annonce"
             android:label="@string/title_activity_blank__annonce"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Blank_Profil"></activity>
+        <activity android:name=".Blank_Profil" />
+        <activity android:name=".TypeUser" />
+        <activity android:name=".MonProfil"></activity>
     </application>
 
 </manifest>

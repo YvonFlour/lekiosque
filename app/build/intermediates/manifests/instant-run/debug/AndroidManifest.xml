@@ -47,6 +47,8 @@
             android:label="@string/title_activity_blank__annonce"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.deon_mass.lekiosque.Blank_Profil" />
+        <activity android:name="com.example.deon_mass.lekiosque.TypeUser" />
+        <activity android:name="com.example.deon_mass.lekiosque.MonProfil" />
 
         <meta-data
             android:name="com.google.android.gms.version"
